@@ -1,0 +1,20 @@
+The propasal is a django app which can be used by mentors and mentees to register for the mapping purpose.
+
+It contains a project named champ,and within this an application named app.
+Various components of the project are-urls,settings,asgi,init,wsgi.
+urls includes the urls of all the pages included from it's app.
+settings is a predefined template available in django and we include the applications we are using under installed apps.
+App has the following components-
+views,models,urls,templates,tests,init,admin,apps,migrations. 
+We define our classes in models ,these are subclasses of django.db.models and give us direct access to database.
+Each attribute of the model represents a database field.
+Views include the various functions called upon when a web request occurs.It returns a web response to the requests.
+urls consist of paths of various pages that view functions render to .
+templates is a folder containig html pages of the site.
+admin page is necessary to make our model visible to the admin,this is achieved by registering it with admin.site.
+apps includes the AppConfig necessary for installing the app in django settings.
+Migrations include any changes made to the database.
+
+Manage.py is automatically created in each django project.
+A venv is installed which contains all the necessary packages.
+db.sqlite3 is a sqlite database created by django. 

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>{% block title %}Welcome{% endblock %}</title>
+  </head>
+
+
+  <body style="background-image:url('https://cdn4.vectorstock.com/i/1000x1000/54/68/bright-blue-smooth-waves-on-white-background-vector-5855468.jpg');background-size:cover;background-position:center;overflow:hidden;">
+  <div style="text-align:center;font-size:30px;margin-right:2%;display:flex-box;">
+     {% block content %}
+    <h1 style="margin:7%"><b>Welcome!</b> </h1>
+
+       <br>
+      {% if user.is_authenticated %}
+        <p>
+          User Authenticated <br>Logout for home page!
+        </p>
+        <br>
+        <a href="{% url 'logout' %}">logout </a>
+      {% else %}
+        <ul style="list-style-type:none;text-align:center;margin:5%;margin-right:7%;margin-top:3%" >
+          <li><a href="{% url 'login' %}">Login</a> </li>
+          <br>
+
+
+          <li><a href="{% url 'register' %}">Signup</a></li>
+        </ul>
+      {% endif %}
+
+      {% endblock %}
+  </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>{% block title %}Welcome{% endblock %}</title>
+
+
+</head>
+<body style="background-image: url('https://cdn4.vectorstock.com/i/1000x1000/54/68/bright-blue-smooth-waves-on-white-background-vector-5855468.jpg');background-size:cover;background-position:center;height:100%;overflow:hidden;" >
+<div style="text-align:center;margin:30%;margin-top:5%;">
+
+    {% block new %}<h1 style="margin:7%;"><b>Create account</b></h1>{% endblock %}
+  <br>
+
+{% block content %}
+
+<div method="post" class="form-group">
+    <form method="post" class="form-group">
+    {% csrf_token %}
+<div  class="block" style="display:inline-block;">
+<div class="inputBox"style="margin-bottom:8%;">
+     <label>Username</label>
+    <input name="username" type="text"  required-autocomplete="off">
+
+</div>
+    <div class="inputBox" style="margin-left:9.5%;margin-bottom:8%" >
+     <label>Email  </label>
+    <input name="email" type="email"  required-autocomplete="off">
+
+</div>
+    <div class="inputBox"style="margin-bottom:8%;">
+        <label>Password</label>
+    <input name="password"type="password"  required-autocomplete="off">
+
+    </div>
+  <div class="inputBox" style="margin-right:65px;margin-bottom:8%" >
+      <label>PasswordConfirm</label>
+    <input name="password" type="password"  required-autocomplete="off">
+
+    </div>
+<div class="radio"style="margin-bottom:3%">
+      <label><input  type="radio" name="is_student" value="student">Mentee</label>
+
+
+    </div>
+    <div class="radio"style="margin-bottom:6%">
+      <label><input  type="radio"  name="is_student" value="teacher">Mentor</label>
+
+    </div>
+</div>
+    <br>
+
+    <button type="=submit" class="btn btn-success">Register</button>
+</form>
+
+</div>
+
+</div>
+{% endblock %}
+</body>
+</html>
